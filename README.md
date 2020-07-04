@@ -1,2 +1,1 @@
-# AppearanceEraser
-Erasing Appearance Preservation in Image Smoothing
+# Under construction now
