@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Erasing Appearance Preservation in Optimization-based Smoothing</title>
+	<link rel="stylesheet" type="text/css" href="./index_files/pixl-bk.css">
+	<link rel="stylesheet" type="text/css" href="./index_files/pixl-fonts.css">
+</head>
+
+<body>
+
+<div class="crumb">
+	<a href="https://github.com/lllyasviel">Style2Paints Research</a> →
+	[Zhang et al. 2020]
+	</span>
+</div>
+
+
+<div class="content">
+<div class="paperheader">
+  <div class="papertitle"> Erasing Appearance Preservation in Optimization-based Smoothing </div>
+  <br>
+  <div class="pubinfo"> European Conference on Computer Vision (ECCV) 2020 </div>
+  <br>
+  <div class="authors"> <a href="https://github.com/lllyasviel">Lvmin Zhang</a>, <a href="https://moeka.me/">Chengze Li</a>, Yi Ji, Chunping Liu, and <a href="https://www.cse.cuhk.edu.hk/~ttwong/myself.html">Tien-tsin Wong</a> </div>
+</div>
+
+<div class="paperimg"><img src="./page_imgs/t.jpg"></div>
+<div class="longcaption">A fine-tuned result from the Erasing Appearance Preservation (EAP) framework with L1 smoothing. In this example, we decompose the flat color layer, the shadow layer, and the specular reflection layer from an illustration. </div>
+<div class="header">Abstract</div>
+<p>
+</p><div class="abstract">
+  Optimization-based image smoothing is routinely formulated as the game between a smoothing energy and an appearance preservation energy. Achieving adequate smoothing is a fundamental goal of these image smoothing algorithms. We show that partially "erasing" the appearance preservation facilitate adequate image smoothing. In this paper, we call this manipulation as Erasing Appearance Preservation (EAP). We conduct an user study, allowing users to indicate the "erasing" positions by drawing scribbles interactively, to verify the correctness and effectiveness of EAP. We observe the characteristics of human-indicated "erasing" positions, and then formulate a simple and effective 0-1 knapsack to automatically synthesize the "erasing" positions. We test our synthesized erasing positions in a majority of image smoothing methods. Experimental results and large-scale perceptual human judgments show that the EAP solution tends to encourage the pattern separation or elimination capabilities of image smoothing algorithms. We further study the performance of the EAP solution in many image decomposition problems to decompose textures, shadows, and the challenging specular reflections. We also present examinations of diversiform image manipulation applications like texture removal, retexturing, intrinsic decomposition, layer extraction, recoloring, material manipulation, etc. Due to the widespread applicability of image smoothing, the EAP is also likely to be used in more image editing applications.
+</div>
+<div class="header">Files</div>
+<ul>
+<li> <a href="https://lllyasviel.github.io/AppearanceEraser/paper/paper.pdf">Paper</a> </li>
+<li> <a href="https://lllyasviel.github.io/AppearanceEraser/paper/video.mp4">Video</a> </li>
+</ul>
+<div class="header">See Also</div>
+<ul>
+
+<li> <a href="https://github.com/lllyasviel/AppearanceEraser">Source Code</a> - Currently the source code is under construction.</li>
+
+<li> <a href="https://github.com/lllyasviel/AppearanceEraser">Supplementary Document</a> - A document of some additional exposition and engineering details.</li>
+
+</ul>
+<div class="header">Citation</div>
+<p>
+Lvmin Zhang, Chengze Li, Yi JI, Chunping Liu, and Tien-tsin Wong.<br>
+"Erasing Appearance Preservation in Optimization-based Smoothing."<br>
+<i>European Conference on Computer Vision (ECCV)</i>, May 2020.
+</p><div class="header">BibTeX</div>
+<p>
+</p><pre>@InProceedings{EAP2020,
+    author={Lvmin Zhang, Chengze Li, Yi JI, Chunping Liu, and Tien-tsin Wong}, 
+    booktitle={European Conference on Computer Vision (ECCV)}, 
+    title={Erasing Appearance Preservation in Optimization-based Smoothing}, 
+    year={2020}, 
+    }
+</pre>
+</div>
+
+
+</body></html>
