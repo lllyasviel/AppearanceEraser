@@ -36,6 +36,10 @@
 % all copies or substantial portions of the Software.
 %
 % The Software is provided "as is", without warranty of any kind.
+%
+% Modified by ToS2P (the Team of Style2Paints).
+% for non-commercial ussage only.
+%
 
 function newim = TVL1denoise(im, lambda, niter)
 
