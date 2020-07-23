@@ -3,8 +3,6 @@
 %   The Code is created based on the method described in the following paper 
 %   [1] "Image Smoothing via L0 Gradient Minimization", Li Xu, Cewu Lu, Yi Xu, Jiaya Jia, ACM Transactions on Graphics, 
 %   (SIGGRAPH Asia 2011), 2011. 
-%  
-%   The code and the algorithm are for non-comercial use only.
 %
 %   Modified by ToS2P (the Team of Style2Paints).
 %   for non-commercial ussage only.
