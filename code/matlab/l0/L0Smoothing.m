@@ -4,7 +4,7 @@
 %   [1] "Image Smoothing via L0 Gradient Minimization", Li Xu, Cewu Lu, Yi Xu, Jiaya Jia, ACM Transactions on Graphics, 
 %   (SIGGRAPH Asia 2011), 2011. 
 %
-%   Modified by ToS2P (the Team of Style2Paints).
+%   Modified by the ToS2P (the Team of Style2Paints).
 %   for non-commercial ussage only.
 %
 
