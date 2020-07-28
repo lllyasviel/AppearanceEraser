@@ -7,7 +7,6 @@
 %   Modified by the ToS2P (the Team of Style2Paints).
 %   for non-commercial ussage only.
 %
-%
 
 
 function S = L0Smoothing(Im, lambda, kappa)
