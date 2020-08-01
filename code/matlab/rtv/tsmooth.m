@@ -32,6 +32,9 @@ function S = tsmooth(I,lambda,sigma,sharpness,maxIter)
 %   Version : 1.0 
 %   Copyright 2012, The Chinese University of Hong Kong.
 % 
+%   Modified by the ToS2P (the Team of Style2Paints).
+%   for non-commercial ussage only.
+%
 
     if (~exist('lambda','var'))
        lambda=0.01;
