@@ -1,4 +1,3 @@
-function [flat_image] = l1flattening(image, param)
 % [ref_image] = l1flattening(image, splabel, param)
 % Usage: flat input image with L1 optimization
 % Input:
@@ -13,6 +12,12 @@ function [flat_image] = l1flattening(image, param)
 %       .threshold   [0.001] stop condition
 % Output:
 %   - flat_image: output image after flattening / edge-preserving smoothing
+%
+%   Modified by the ToS2P (the Team of Style2Paints).
+%   for non-commercial ussage only.
+%
+
+function [flat_image] = l1flattening(image, param)
 
 param = getPrmDflt(param, {'alpha',20,'beta',0.01,'theta',50,'lambda',120, ...
     'itr_num', 4, 'local_param', {}, 'threshold', 0.001});
