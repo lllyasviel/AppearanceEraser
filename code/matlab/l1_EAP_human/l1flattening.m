@@ -26,19 +26,16 @@ lambda = param.lambda; itr_num = param.itr_num; local_param = param.local_param;
 
 width = size(image, 2); height = size(image, 1); pixel_num = width * height;
 image = double(image);
-oimg = double(image);
-M = double(mask)/double(255);
-piter = 512;
-for k=1:piter
-    image = image(:, [2:width, width], :) + image([2:height, height], :, :) + image(:, [1, 1:width-1], :) + image([1, 1:height-1], :, :);
-    image = image / 4.0;
-    image = image.*M + oimg.*(1.0-M);
-end
+mask = double(mask);
 
-r = image(:,:,1); r = r(:); g = image(:,:,2); g = g(:); b = image(:,:,3); b = b(:);
+r = image(:,:,1); r = r(:); g = image(:,:,2); g = g(:); b = image(:,:,3); b = b(:); m = mask(:,:,1); m = m(:);
 
 fprintf('Construct local sparse matrix...\n');
 A = windowvar(image, local_param); A = alpha * A;
+m = 1.0-m./255.0;
+M = [m; m; m];
+M(M<1e-5)=1e-5;
+M = sparse(1:3*pixel_num, 1:3*pixel_num, M');
 
 fprintf('Construct global sparse matrix...\n');
 cform = makecform('srgb2lab');
@@ -51,8 +48,7 @@ B = beta * B;
 target = [r; g; b];
 
 fprintf('Calculate left hand matrix...\n');
-left_hand = lambda * (A' * A) + (B' * B) + ...
-        theta * sparse(1:3*pixel_num, 1:3*pixel_num, ones(1,3*pixel_num));
+left_hand = lambda * (A' * A) + (B' * B) + theta * (M' * M);
 
 ref = zeros(pixel_num*3,1);
 old_ref = target;
@@ -62,14 +58,20 @@ b_2 = zeros(size(B,1),1);
 d_2 = zeros(size(B,1),1);
 for i = 1 : itr_num
     fprintf('Iteration %d out of %d...\n',i, itr_num);
-    if(norm(ref - old_ref) < threshold) break; end 
+    if(norm(ref - old_ref) < threshold) 
+        break; 
+    end 
     old_ref = ref;
-    right_hand = theta * target + lambda * (A' * (d_1 - b_1) + B' * (d_2 - b_2));
+    right_hand = theta * M * target + lambda * (A' * (d_1 - b_1) + B' * (d_2 - b_2));
 
-    ref = left_hand \ right_hand; temp_1 = A * ref; temp_2 = B * ref;
+    ref = left_hand \ right_hand; 
+    temp_1 = A * ref; temp_2 = B * ref;
     d_1 = shrink(temp_1 + b_1, 1.0 / lambda);
     d_2 = shrink(temp_2 + b_2, 1.0 / lambda);
     b_1 = b_1 + temp_1 - d_1; b_2 = b_2 + temp_2 - d_2;
+    
+    flat_image = reshape(ref, height, width, 3); flat_image = uint8(flat_image);
+    imwrite(flat_image, 'output.png');
 end
 
 flat_image = reshape(ref, height, width, 3); flat_image = uint8(flat_image);
