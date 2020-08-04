@@ -65,8 +65,6 @@ function S = tsmooth(I,mask,lambda,sigma,sharpness,maxIter)
         Mw = Mw + 1e-5;
         I = I.*M + oI.*(1.0-M);
     end
-    I(I<0)=0;
-    I(I>255)=255;
     I = im2double(uint8(I));
     x = I;
     sigma_iter = sigma;
