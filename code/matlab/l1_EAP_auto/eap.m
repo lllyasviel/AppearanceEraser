@@ -22,5 +22,6 @@ for k=1:5
     mask(rand(height, width).*alpha +1.0-alpha<knapsack) = 255;
     mask(mask < 255) = 0;
 end
+output = uint8(output); % add this line for fix (see issue # 5)
 end
 
