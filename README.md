@@ -208,7 +208,7 @@ Our applications are from many third-party projects. Please refer to their origi
 If you use this code for your research, please cite our paper:
 
     @InProceedings{EAP2020,
-    author={Lvmin Zhang, Chengze Li, Yi JI, Chunping Liu, and Tien-tsin Wong}, 
+    author={Lvmin Zhang and Chengze Li and Yi JI and Chunping Liu and Tien-tsin Wong}, 
     booktitle={European Conference on Computer Vision (ECCV)}, 
     title={Erasing Appearance Preservation in Optimization-based Smoothing}, 
     year={2020}, 
